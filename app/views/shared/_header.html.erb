@@ -1,0 +1,22 @@
+<div ng-controller="HeaderController">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <%=link_to 'Sky Rewards',  root_url, :class=>"navbar-brand"%>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <%=link_to_acive 'Customers',  customers_url%>
+          <%=link_to_acive 'Channels',  channels_url%>
+          <%=link_to_acive 'Rewards',  rewards_url%>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

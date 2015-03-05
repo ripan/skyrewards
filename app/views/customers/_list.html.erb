@@ -1,0 +1,37 @@
+<table class="table table-condensed table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Account number</th>
+      <th>Channel Subscriptions</th>
+      <th>Eligibility Status</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |customer| %>
+    <tr>
+      <td><%= customer.name %></td>
+      <td><%= customer.account_number %></td>
+      <td>
+        <ul class="list-unstyled">
+          <% customer.channels.each do |channel| %>
+          <li><span class="label label-primary"><%=channel.name%></span></li>
+          <%end%>
+        </ul>
+      </td>
+      <td>
+        <span id="customer-reward-<%=customer.id%>"></span>
+      </td>
+      <td>
+        <span class="pull-right">
+        <%= link_to "Check Reward Eligibility", eligibility_check_url(customer), remote: true , :class=>"btn btn-success btn-xs"%>
+        <%= link_to 'Show', customer, :class=>"btn btn-default btn-xs" %>
+        <%= link_to 'Edit', edit_customer_path(customer), :class=>"btn btn-primary btn-xs" %>
+        <%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger btn-xs"%>
+        </span>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

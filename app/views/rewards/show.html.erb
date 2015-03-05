@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<p>
+	<strong>Name:</strong>
+	<%= @reward.name %>
+</p>
+<p>
+	<strong>Channels:</strong>
+	<% @reward.channels.each do |channel| %>
+	<span class="label label-info"><%=channel.name%></span>
+	<%end%>
+</p>
+<%= link_to 'Edit', edit_reward_path(@reward) %> |
+<%= link_to 'Back', rewards_path %>

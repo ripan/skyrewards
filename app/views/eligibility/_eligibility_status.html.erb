@@ -1,0 +1,11 @@
+<strong class="text-muted"><%=response_obj[:text]%></strong>
+<ul class="list-unstyled">
+	<%if response_obj[:message].instance_of? Array%>
+	<b>Rewards</b>
+	<%response_obj[:message].each do |reward|%>
+	<li><%=reward%></li>
+	<%end%>
+	<%else%>
+	<li><%=response_obj[:message]%></li>
+	<%end%>
+</ul>

@@ -1,0 +1,2 @@
+$("#customer-reward-<%=@customer.id%>").html("<%=escape_javascript(image_tag('loader.gif', size: '20'))%>")
+$("#customer-reward-<%=@customer.id%>").html("<%= escape_javascript render(:partial => 'eligibility/eligibility_status', :locals => {:response_obj => @response_obj}) %>");

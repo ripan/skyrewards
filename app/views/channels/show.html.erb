@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+<p>
+	<strong>Name:</strong>
+	<%= @channel.name %>
+</p>
+<p>
+	<strong>Rewards:</strong>
+	<ul class="list-unstyled">
+		<% @channel.rewards.each do |reward| %>
+		<li><span class="label label-default"><%=reward.name%></span></li>
+		<%end%>
+	</ul>
+</p>
+<%= link_to 'Edit', edit_channel_path(@channel) %> |
+<%= link_to 'Back', channels_path %>

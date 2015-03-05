@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+<p>
+	<strong>Name:</strong>
+	<%= @customer.name %>
+</p>
+<p>
+	<strong>Account number:</strong>
+	<%= @customer.account_number %>
+</p>
+<p>
+	<strong>Channel Subscriptions:</strong>
+	<ul class="list-unstyled">
+		<% @customer.channels.each do |channel| %>
+		<li><span class="label label-primary"><%=channel.name%></span></li>
+		<%end%>
+	</ul>
+</p>
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>
